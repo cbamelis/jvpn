@@ -21,6 +21,7 @@ Connect to Juniper VPN on the command line without Java
  * Perl with LWP modules (https)
  * openssl binary
  * unzip (for client unpacking)
+ * For Ubuntu: `sudo apt-get install -y perl libterm-readkey-perl libwww-perl unzip openssl`
 
 ### Extra requirements for ncui mode (optional):
  (note the i686 requirements if your OS is 64-bit)
@@ -30,9 +31,11 @@ Connect to Juniper VPN on the command line without Java
  * libgcc.i686
 
 ## Usage
-To configure jvpn.pl, edit jvpn.ini. If you don`t have installed client - first
-run of jvpn.pl (under sudo) and it will download and install it automatically.
-If you want to run it without sudo - set suid bit on the "ncsvc" binary.
+ * Install required software
+ * To configure jvpn.pl, edit jvpn.ini.
+ * First run: `sudo ./jvpn.pl` (this will automatically download and install client)
+ * Allow next runs without sudo: `sudo chmod u+s ./ncsvc` 
+ * As of second run: `./jvpn.pl`
 
 If you have multiple configurations - use --conf switch to define ini file.
 
